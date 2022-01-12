@@ -21,6 +21,7 @@ services:
 
   kafka:
     image: confluentinc/cp-kafka:6.0.0
+    restart: always
     depends_on:
       - zookeeper
     ports:
@@ -40,6 +41,7 @@ services:
   control-center:
     image: confluentinc/cp-enterprise-control-center:6.0.0
     hostname: control-center
+    restart: always
     depends_on:
       - kafka
     ports:
